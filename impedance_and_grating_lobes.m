@@ -61,29 +61,21 @@ for idx = 1 : 1 : 2
         'd_{x} = ' num2str(dx(idx) * 1e3) ' mm and d_{y} = ' ...
         num2str(dy(idx) * 1e3) ' mm']);
     hold on;
-%     plot(theta_plot, imag(plane_zin), '--', 'LineWidth', 2.0, ...
-%         'Color', [color_styles(idx)], 'DisplayName', ['\Im(Z_{in}), ' ...
-%         'd_{x} = ' num2str(dx(idx) * 1e3) ' mm and d_{y} = ' ...
-%         num2str(dy(idx) * 1e3) ' mm']);
-%     hold on;
 end
 hold off;
 grid on;
 legend show;
 legend('location', 'bestoutside');
 xticks(-90 : 15 : 90);
-yticks(0 : 20 : 100);
-% yticks(-10 : 10 : 70);
+yticks(0 : 15 : 75);
 xlim([-90 90]);
-ylim([0 100]);
-% ylim([-10 70]);
+ylim([0 75]);
 xlabel('\theta / deg');
 ylabel('Z_{in} / \Omega');
 title(['Array Impedance @ E-plane, f = ' num2str(wave.f * 1e-9) ...
     ' GHz, L = ' num2str(dipole.l * 1e3) ' mm, and W = ' ...
     num2str(dipole.w * 1e3) ' mm']);
 saveas(gcf, 'figures\active_impedance_E_plane.fig');
-% saveas(gcf, 'figures\impedance_E_plane.fig');
 
 figure('Position', [250 250 800 400]);
 for idx = 1 : 1 : 2
@@ -95,29 +87,21 @@ for idx = 1 : 1 : 2
         'd_{x} = ' num2str(dx(idx) * 1e3) ' mm and d_{y} = ' ...
         num2str(dy(idx) * 1e3) ' mm']);
     hold on;
-%     plot(theta_plot, imag(plane_zin), '--', 'LineWidth', 2.0, ...
-%         'Color', [color_styles(idx)], 'DisplayName', ['\Im(Z_{in}), ' ...
-%         'd_{x} = ' num2str(dx(idx) * 1e3) ' mm and d_{y} = ' ...
-%         num2str(dy(idx) * 1e3) ' mm']);
-%     hold on;
 end
 hold off;
 grid on;
 legend show;
 legend('location', 'bestoutside');
 xticks(-90 : 15 : 90);
-yticks(0 : 15 : 75);
-% yticks(-50 : 50 : 250);
+yticks(30 : 30 : 270);
 xlim([-90 90]);
-ylim([0 75]);
-% ylim([-50 250]);
+ylim([30 270]);
 xlabel('\theta / deg');
 ylabel('Z_{in} / \Omega');
 title(['Array Impedance @ H-plane, f = ' num2str(wave.f * 1e-9) ...
     ' GHz, L = ' num2str(dipole.l * 1e3) ' mm, and W = ' ...
     num2str(dipole.w * 1e3) ' mm']);
 saveas(gcf, 'figures\active_impedance_H_plane.fig');
-% saveas(gcf, 'figures\impedance_H_plane.fig');
 
 %% PLOT GRATING LOBES
 planes_theta = linspace(- pi / 2, pi / 2, 2001);
