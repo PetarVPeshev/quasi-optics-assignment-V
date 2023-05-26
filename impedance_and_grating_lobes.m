@@ -45,8 +45,6 @@ for idx = 1 : 1 : length(dx)
     lobes(:, :, :, idx) = grating_lobes(wave.k0, dx(idx), dy(idx), modes);
 end
 
-
-
 %% PLOT E, D, AND H PLANE IMPEDANCE
 theta_length = length(theta);
 theta_plot = NaN(1, theta_length * 2);
